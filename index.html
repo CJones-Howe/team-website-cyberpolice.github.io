@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stuxnet Incident</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      color: #660033;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: #1a001a;
+      color: #ffcce6;
+    }
+
+    header {
+      background-color: #ff99cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    body.dark header {
+      background-color: #660033;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #ffccdd;
+      padding: 10px;
+    }
+
+    body.dark nav {
+      background-color: #33001a;
+    }
+
+    nav a {
+      color: #660033;
+      font-weight: bold;
+    }
+
+    body.dark nav a {
+      color: #ffcce6;
+    }
+
+    nav a:focus,
+    .toggle-btn:focus {
+      outline: 2px dashed #ff3399;
+      outline-offset: 4px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #ff3399;
+    }
+
+    body.dark h1, body.dark h2 {
+      color: #ff66b2;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #ffccdd;
+      text-align: center;
+      padding: 10px;
+      color: #660033;
+    }
+
+    body.dark footer {
+      background-color: #33001a;
+      color: #ffcce6;
+    }
+
+    a {
+      color: #ff3399;
+      text-decoration: none;
+    }
+
+    body.dark a {
+      color: #ff66b2;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .timeline {
+      border-left: 4px solid #ff3399;
+      padding-left: 20px;
+      margin-left: 10px;
+    }
+
+    body.dark .timeline {
+      border-left: 4px solid #ff66b2;
+    }
+
+    .timeline-event {
+      margin-bottom: 15px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 12px;
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    body.dark .toggle-btn {
+      background-color: #ff66b2;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>The Stuxnet Incident</h1>
+    <button class="toggle-btn" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#home" tabindex="0">Home</a>
+    <a href="#about" tabindex="0">About</a>
+    <a href="#services" tabindex="0">Services</a>
+    <a href="#contact" tabindex="0">Contact</a>
+  </nav>
+
+  <main role="main" id="home">
+    <img src="https://s.yimg.com/ny/api/res/1.2/fPoqjCXq.MJ0uazdz.ezPg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NDY-/https://s.yimg.com/os/creatr-uploaded-images/2019-08/1bef9bd0-cb54-11e9-afbb-41ba524c604d" alt="Stuxnet infographic" />
+
+    <button onclick="showVideo()" aria-label="Show YouTube video link">Click me for YouTube Video</button>
+    <p id="videoLink"></p>
+
+    <section id="about">
+      <h2>What is Stuxnet?</h2>
+      <p>Stuxnet is a computer worm that first made headlines in 2010. It used zero-day Windows vulnerabilities and searched infected PCs for a connection to the software that controlled Iranian centrifuges. It then used this connection to send instructions that damaged the equipment.</p>
+    </section>
+
+    <section>
+      <h2>Timeline of Events</h2>
+      <div class="timeline" aria-label="Timeline of Stuxnet events">
+        <div class="timeline-event"><strong>2005-2007:</strong> U.S. and Israel begin planning to disrupt Iranian nuclear facilities (Operation Olympic Games).</div>
+        <div class="timeline-event"><strong>2009:</strong> Stuxnet is implemented and released.</div>
+        <div class="timeline-event"><strong>2010:</strong> Malware is discovered by cybersecurity companies.</div>
+        <div class="timeline-event"><strong>2011:</strong> The public becomes aware of the operation.</div>
+        <div class="timeline-event"><strong>Today:</strong> Stuxnet is considered one of the most well-known cyberattacks in history.</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <p>We created this website for our CYBR 201 course at the University at Albany.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-info">Feel free to contact us via email: <a href="mailto:rchhabra@albany.edu">rchhabra@albany.edu</a></p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; CyberPolice from CYBR 201</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    function showVideo() {
+      const video = `<a href="https://youtu.be/WyBlh8Tq6_Q?si=d0piVXKkO_8xMNgZ" target="_blank">Watch the Stuxnet Documentary</a>`;
+      document.getElementById("videoLink").innerHTML = video;
+    }
+  </script>
+</body>
+</html>
